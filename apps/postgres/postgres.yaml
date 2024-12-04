@@ -1,20 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: postgres
-  namespace: infrastructure
+  name: postgres-app
+  namespace: argocd
 spec:
-  project: shared
+  project: default
   source:
-    repoURL: https://charts.bitnami.com/bitnami
+    repoURL: 'https://charts.bitnami.com/bitnami'
     chart: postgresql
-    targetRevision: 17.2.0
-    helm:
-      valueFiles:
-        - bootstrap/postgres/values.yaml
+    targetRevision: 12.1.9
   destination:
-    server: https://kubernetes.default.svc
-    namespace: default
+    server: 'https://kubernetes.default.svc'
+    namespace: infrastructure
   syncPolicy:
     automated:
       prune: true
