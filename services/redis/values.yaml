@@ -6,7 +6,9 @@ redis:
 
   master:
     persistence:
-      enabled: false
+      enabled: true
+      size: 4Gi
+      storageClass: "local-path"
 
   replica:
     replicaCount: 1
