@@ -1,15 +1,13 @@
-architecture: standalone
-auth:
-  enabled: true
-  password: "password"
-
-master:
-  persistence:
+redis:
+  architecture: standalone
+  auth:
     enabled: true
-    size: 4Gi
+    password: "password"
 
-replica:
-  replicaCount: 1
+  master:
+    persistence:
+      enabled: true
+      size: 4Gi
 
-metrics:
-  enabled: false
+  replica:
+    replicaCount: 1
