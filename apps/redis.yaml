@@ -2,16 +2,16 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: redis
-  namespace: argocd
+  namespace: infrastructure
 spec:
   project: cfv3
   source:
     repoURL: 'https://github.com/Vasary/geron-infrastructure.git'
     targetRevision: HEAD
     path: services/redis
-#    helm:
-#      valueFiles:
-#        - services/redis/values.yaml
+    helm:
+      valueFiles:
+        - services/redis/extra-values.yaml
   destination:
     server: https://kubernetes.default.svc
   syncPolicy:
@@ -21,3 +21,9 @@ spec:
     syncOptions:
       - PrunePropagationPolicy=background
       - CreateNamespace=true
+    retry:
+      limit: 10
+      backoff:
+        duration: "5s"
+        factor: 2
+        maxDuration: "2m"
