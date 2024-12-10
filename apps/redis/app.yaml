@@ -1,18 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: postgres-app
+  name: redis
   namespace: argocd
 spec:
   project: default
   source:
-    repoURL: 'https://charts.bitnami.com/bitnami'
-    chart: postgresql
-    targetRevision: 12.1.9
+    repoURL: 'https://github.com/Vasary/geron-infrastructure.git'
+    targetRevision: HEAD
+    path: services/redis
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: infrastructure
+    namespace: redis
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
