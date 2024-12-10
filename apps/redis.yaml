@@ -11,7 +11,7 @@ spec:
     path: services/redis
     helm:
       valueFiles:
-        - services/redis/extra-values.yaml
+        - extra-values.yaml
   destination:
     server: https://kubernetes.default.svc
   syncPolicy:
