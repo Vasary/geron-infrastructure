@@ -9,12 +9,3 @@ spec:
     repoURL: 'https://github.com/Vasary/geron-infrastructure.git'
     targetRevision: HEAD
     path: services/redis
-  destination:
-    server: 'https://kubernetes.default.svc'
-    namespace: redis
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
