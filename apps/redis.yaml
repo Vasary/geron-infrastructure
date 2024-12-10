@@ -9,9 +9,9 @@ spec:
     repoURL: 'https://github.com/Vasary/geron-infrastructure.git'
     targetRevision: HEAD
     path: services/redis
-    helm:
-      valueFiles:
-        - services/redis/values.yaml
+#    helm:
+#      valueFiles:
+#        - services/redis/values.yaml
   destination:
     server: https://kubernetes.default.svc
   syncPolicy:
