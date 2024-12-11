@@ -8,7 +8,7 @@ redis:
     persistence:
       enabled: true
       size: 4Gi
-      storageClass: "local-path"
+      storageClass: "openebs-hostpath"
 
   replica:
     replicaCount: 1
