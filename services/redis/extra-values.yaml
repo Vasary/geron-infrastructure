@@ -6,9 +6,9 @@ redis:
 
   master:
     persistence:
-      enabled: false
-      size: 4Gi
-      storageClass: "openebs-hostpath"
+      enabled: true
+      size: 2Gi
+      storageClass: "openebs-single-replica"
 
   replica:
     replicaCount: 1
