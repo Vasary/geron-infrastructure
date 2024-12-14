@@ -8,7 +8,7 @@ redis:
     persistence:
       enabled: true
       size: 2Gi
-      storageClass: "openebs-single-replica"
+      storageClass: "nfs-client"
 
   replica:
     replicaCount: 1
