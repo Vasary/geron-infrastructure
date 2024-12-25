@@ -7,7 +7,7 @@ redis:
   master:
     persistence:
       enabled: true
-      size: 2Gi
+      size: 10Gi
       storageClass: "nfs-client"
 
   replica:

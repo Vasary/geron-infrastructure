@@ -1,0 +1,6 @@
+dependencies:
+- name: coins-inventory
+  repository: https://vasary.github.io/coins-inventory
+  version: 1.0.10
+digest: sha256:af36f5bbcd21db1702ab35f424f21c9e11168d5ade6632293cb9e708408828a1
+generated: "2024-12-26T12:39:40.524677+01:00"

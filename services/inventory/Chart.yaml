@@ -1,0 +1,11 @@
+apiVersion: v2
+name: inventory
+description: A Geron helm chart for Coins-inventory project
+type: application
+icon: https://bitnami.com/assets/stacks/redis/img/redis-stack-220x234.png
+version: 0.1.0
+appVersion: 0.1.0
+dependencies:
+  - name: coins-inventory
+    version: 1.0.10
+    repository: https://vasary.github.io/coins-inventory
